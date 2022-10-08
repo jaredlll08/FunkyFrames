@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "funkyframes",
+  "version": "${version}",
+  "name": "Funky Frames",
+  "description": ".",
+  "icon": "assets/funkyframes/icon.png",
+  "authors": [
+    "Jaredlll08"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/funkyframes",
+    "sources": "https://github.com/jaredlll08/funkyframes",
+    "issues": "https://github.com/jaredlll08/funkyframes/issues"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.blamejared.funkyframes.FunkyFramesFabric"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14",
+    "minecraft": "1.19.x"
+  },
+  "custom": {},
+  "mixins": [
+    "funkyframes.mixins.json",
+    "funkyframes.fabric.mixins.json"
+  ]
+}

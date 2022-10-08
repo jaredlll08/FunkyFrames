@@ -1,0 +1,27 @@
+modLoader = "javafml"
+loaderVersion = "[41,)"
+issueTrackerURL = "https://github.com/jaredlll08/FunkyFrames/issues"
+license = "MIT"
+[[mods]]
+modId = "funkyframes"
+version = "${file.jarVersion}"
+displayName = "Funky Frames"
+displayURL = "https://www.curseforge.com/minecraft/mc-mods/funkyframes"
+updateJSONURL = "https://updates.blamejared.com/get?n=funkyframes&gv=1.19.2"
+credits = ""
+authors = "Jaredlll08"
+logoFile = "icon.png"
+description = '''
+'''
+[[dependencies.funkyframes]]
+modId = "forge"
+mandatory = true
+versionRange = "[41.0.0,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.funkyframes]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19,)"
+ordering = "NONE"
+side = "BOTH"
