@@ -1,5 +1,6 @@
 package com.blamejared.funkyframes.client.render;
 
+import com.blamejared.funkyframes.FunkyFrames;
 import com.blamejared.funkyframes.client.render.shader.FixedMultiTextureStateShard;
 import com.blamejared.funkyframes.util.SelfKeyable;
 import com.blamejared.funkyframes.util.SelfKeyedHashMap;
@@ -82,7 +83,7 @@ public class FunkyFramesRenderTypes extends RenderType {
         
         public String formattedName() {
             
-            return "funkyframes_" + name;
+            return FunkyFrames.MOD_ID + "_" + name;
         }
         
         public String name() {
