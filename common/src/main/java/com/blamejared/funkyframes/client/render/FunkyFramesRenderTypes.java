@@ -24,7 +24,13 @@ public class FunkyFramesRenderTypes extends RenderType {
     
     private static final Map<String, ShaderRenderType> RENDER_TYPES = Util.make(() -> {
         SelfKeyedHashMap<String, ShaderRenderType> map = new SelfKeyedHashMap<>();
-        map.add(new ShaderRenderType("portal", DefaultVertexFormat.NEW_ENTITY, (textures, renderType) -> {
+        map.add(basic("portal"));
+        return Collections.unmodifiableMap(map);
+    });
+    
+    private static ShaderRenderType basic(String name) {
+        
+        return new ShaderRenderType(name, DefaultVertexFormat.NEW_ENTITY, (textures, renderType) -> {
             CompositeState compState = CompositeState.builder()
                     .setShaderState(renderType.shaderState)
                     .setTextureState(new FixedMultiTextureStateShard(textures))
@@ -33,9 +39,8 @@ public class FunkyFramesRenderTypes extends RenderType {
                     .setOverlayState(OVERLAY)
                     .createCompositeState(true);
             return create(renderType.formattedName(), renderType.format, VertexFormat.Mode.QUADS, 256, true, false, compState);
-        }));
-        return Collections.unmodifiableMap(map);
-    });
+        });
+    }
     
     private static final Map<String, ShaderRenderType> RENDER_TYPES_VIEW = Collections.unmodifiableMap(RENDER_TYPES);
     
