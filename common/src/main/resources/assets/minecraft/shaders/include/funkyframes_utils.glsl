@@ -32,7 +32,7 @@ vec2 scale(vec2 vIn) {
  * Checks if the given uv is inside the bounds of min and max
  */
 bool inside(vec2 uv, vec2 min, vec2 max) {
-    return uv.x > min.x && uv.x < max.x && uv.y > min.y && uv.y < max.y;
+    return uv.x >= min.x && uv.x <= max.x && uv.y >= min.y && uv.y <= max.y;
 }
 
 /**
