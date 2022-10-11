@@ -17,6 +17,7 @@ public class FunkyFramePaintings {
     public static final RegistrationProvider<PaintingVariant> PAINTINGS = RegistrationProvider.get(Registry.PAINTING_VARIANT_REGISTRY, FunkyFrames.MOD_ID);
     
     private static final RegistryObject<PaintingVariant> PORTAL = PAINTINGS.register("portal", () -> new FunkyFramePaintingVariant(16, 16, "portal", List.of(new Texture(FunkyFrames.rl("textures/painting/portal.png")))));
+    private static final RegistryObject<PaintingVariant> TRANS_FLAG = PAINTINGS.register("trans_flag", () -> new FunkyFramePaintingVariant(32, 32, "trans_flag", List.of(new Texture(FunkyFrames.rl("textures/painting/trans_flag.png")))));
     
     public static void loadClass() {}
     

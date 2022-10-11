@@ -1,5 +1,6 @@
 {
-  "values" : [
-    "funkyframes:portal"
+  "values": [
+    "funkyframes:portal",
+    "funkyframes:trans_flag"
   ]
 }

@@ -53,10 +53,10 @@ void rotate2dAround(vec2 center, float angle, inout vec2 uv) {
 }
 
 /**
- * Steps the given uv to be the same size as a texture pixel
+ * Steps the given uv to be the same size as a texture pixel.
  */
 vec2 tex_to_quad(vec2 uv) {
-    return vec2(floor(uv.x / (1. / TEX_WIDTH)), floor(uv.y / (1. / TEX_HEIGHT)));
+    return uv - vec2(mod(uv.x, 1.0 / TEX_WIDTH), mod(uv.y, 1.0 / TEX_HEIGHT));
 }
 
 /**

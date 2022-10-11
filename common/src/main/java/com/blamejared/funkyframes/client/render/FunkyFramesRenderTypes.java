@@ -25,6 +25,7 @@ public class FunkyFramesRenderTypes extends RenderType {
     private static final Map<String, ShaderRenderType> RENDER_TYPES = Util.make(() -> {
         SelfKeyedHashMap<String, ShaderRenderType> map = new SelfKeyedHashMap<>();
         map.add(basic("portal"));
+        map.add(basic("trans_flag"));
         return Collections.unmodifiableMap(map);
     });
     
