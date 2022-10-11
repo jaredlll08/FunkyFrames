@@ -25,15 +25,15 @@ out vec4 fragColor;
 
 void main()
 {
-    float time = sin(GameTime) * 580.;
+    float time = sin(GameTime) * 720.;
     vec2 st = texCoord0;
-    vec4 color = texture(Sampler0, st) * vertexColor * ColorModulator;
-    if (inside(st, vec2(scaleW(4), scaleH(6)), vec2(scaleW(6), scaleH(9)))) {
-        st = tex_to_quad(st);
-        float noise = snoise(vec3(st, time));
-        noise = map(noise, -1, 1, 0.4, 0.6);
-        color = vec4(noise, 0, noise, 1.);
-    }
+    vec4 rawColor = texture(Sampler0, st);
+
+    float noise = map(snoise(vec3(tex_to_quad(st), time)), -1, 1, 0.7, 1);
+
+    replace(rawColor, vec4(1, 0, 1, 1), vec4(noise, 0, noise, 1));
+
+    vec4 color = rawColor * vertexColor * ColorModulator;
 
     color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
     color *= lightMapColor;

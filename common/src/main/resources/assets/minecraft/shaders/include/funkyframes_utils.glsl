@@ -66,6 +66,15 @@ float map(float value, float min1, float max1, float min2, float max2) {
     return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
 }
 
+/**
+ * Replaces the given color with the new color.
+ */
+void replace(inout vec4 color, vec4 replace, vec4 with) {
+    if (color == replace) {
+        color = with;
+    }
+}
+
 // Source: https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83#simplex-noise
 //	Simplex 3D Noise
 //	by Ian McEwan, Ashima Arts
