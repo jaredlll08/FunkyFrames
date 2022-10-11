@@ -56,11 +56,11 @@ public class RenderPainting {
         for(int xSec = 0; xSec < xSections; xSec++) {
             for(int ySec = 0; ySec < ySections; ySec++) {
                 
-                float minX = xSize + xSec;
-                float minY = ySize + ySec;
+                float minX = xSize + (xSec * sectionSize);
+                float minY = ySize + (ySec * sectionSize);
                 
-                float maxX = xSize + xSec + sectionSize;
-                float maxY = ySize + ySec + sectionSize;
+                float maxX = xSize + ((xSec + 1) * sectionSize);
+                float maxY = ySize + ((ySec + 1) * sectionSize);
                 
                 // back
                 {
