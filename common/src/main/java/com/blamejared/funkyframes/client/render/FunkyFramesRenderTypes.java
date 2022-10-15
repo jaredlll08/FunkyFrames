@@ -8,6 +8,7 @@ import com.blamejared.funkyframes.util.Texture;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import net.minecraft.Util;
+import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -26,6 +27,8 @@ public class FunkyFramesRenderTypes extends RenderType {
         SelfKeyedHashMap<String, ShaderRenderType> map = new SelfKeyedHashMap<>();
         map.add(basic("portal"));
         map.add(basic("trans_flag"));
+        map.add(basic("troubles_brewing"));
+        
         return Collections.unmodifiableMap(map);
     });
     

@@ -150,3 +150,26 @@ float snoise(vec3 v) {
     return 42.0 * dot(m*m, vec4(dot(p0, x0), dot(p1, x1),
     dot(p2, x2), dot(p3, x3)));
 }
+
+float mapSnoise(vec3 v, float min, float max) {
+    return map(snoise(v), -1, 1, min, max);
+}
+
+    // Source: https://thebookofshaders.com/13/
+
+    #define NUM_OCTAVES 5
+
+float fbm ( in vec2 _st) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    // Rotate to reduce axial bias
+    mat2 rot = mat2(cos(0.5), sin(0.5),
+    -sin(0.5), cos(0.50));
+    for (int i = 0; i < NUM_OCTAVES; ++i) {
+        v += a * snoise(vec3(_st, 0));
+        _st = rot * _st * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
