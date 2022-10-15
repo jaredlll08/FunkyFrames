@@ -64,10 +64,10 @@ public class RenderPainting {
                 
                 // back
                 {
-                    vertex(matrix, normal, miscVertex, maxX, maxY, backUMin, backVMax, +0.5F, 0, 0, +1, light);
-                    vertex(matrix, normal, miscVertex, minX, maxY, backUMax, backVMax, +0.5F, 0, 0, +1, light);
-                    vertex(matrix, normal, miscVertex, minX, minY, backUMax, backVMin, +0.5F, 0, 0, +1, light);
-                    vertex(matrix, normal, miscVertex, maxX, minY, backUMin, backVMin, +0.5F, 0, 0, +1, light);
+                    vertex(matrix, normal, miscVertex, maxX, maxY, backUMax, backVMin, +0.5F, 0, 0, +1, light);
+                    vertex(matrix, normal, miscVertex, minX, maxY, backUMin, backVMin, +0.5F, 0, 0, +1, light);
+                    vertex(matrix, normal, miscVertex, minX, minY, backUMin, backVMax, +0.5F, 0, 0, +1, light);
+                    vertex(matrix, normal, miscVertex, maxX, minY, backUMax, backVMax, +0.5F, 0, 0, +1, light);
                 }
                 // top
                 {
