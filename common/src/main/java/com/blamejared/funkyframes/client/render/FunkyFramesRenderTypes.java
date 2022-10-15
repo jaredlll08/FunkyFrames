@@ -35,7 +35,7 @@ public class FunkyFramesRenderTypes extends RenderType {
             CompositeState compState = CompositeState.builder()
                     .setShaderState(renderType.shaderState)
                     .setTextureState(new FixedMultiTextureStateShard(textures))
-                    .setTransparencyState(NO_TRANSPARENCY)
+                    .setTransparencyState(RenderStateShard.TRANSLUCENT_TRANSPARENCY)
                     .setLightmapState(LIGHTMAP)
                     .setOverlayState(OVERLAY)
                     .createCompositeState(true);
