@@ -48,6 +48,7 @@ tasks.create<TaskPublishCurseForge>("publishCurseForge") {
     mainFile.releaseType = CFG_Contants.RELEASE_TYPE_RELEASE
     mainFile.addJavaVersion("Java ${Versions.JAVA}")
     mainFile.addGameVersion(Versions.MINECRAFT)
+    mainFile.addRequirement("fabric-api")
 
     doLast {
         project.ext.set("curse_file_url", "${Properties.CURSE_HOMEPAGE}/files/${mainFile.curseFileId}")
