@@ -3,8 +3,7 @@
   "id": "funkyframes",
   "version": "${version}",
   "name": "Funky Frames",
-  "description": ".",
-  "icon": "assets/funkyframes/icon.png",
+  "description": "Paintings feel too static? Try some Funky Frames!",
   "authors": [
     "Jaredlll08"
   ],
@@ -28,5 +27,6 @@
   "mixins": [
     "funkyframes.mixins.json",
     "funkyframes.fabric.mixins.json"
-  ]
+  ],
+  "accessWidener": "funkyframes.accesswidener"
 }

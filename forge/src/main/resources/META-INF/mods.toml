@@ -10,8 +10,9 @@ displayURL = "https://www.curseforge.com/minecraft/mc-mods/funkyframes"
 updateJSONURL = "https://updates.blamejared.com/get?n=funkyframes&gv=1.19.2"
 credits = ""
 authors = "Jaredlll08"
-logoFile = "icon.png"
+# logoFile = "icon.png"
 description = '''
+Paintings feel too static? Try some Funky Frames!
 '''
 [[dependencies.funkyframes]]
 modId = "forge"

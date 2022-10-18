@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 @Mixin(GameRenderer.class)
 public class MixinGameRenderer {
     
-    @ModifyVariable(method = "reloadShaders", at = @At(value = "STORE", target = "Lnet/minecraft/client/renderer/GameRenderer;reloadShaders(Lnet/minecraft/server/packs/resources/ResourceManager;)V"), print = true, index = 3, ordinal = 1)
+    @ModifyVariable(method = "reloadShaders", at = @At(value = "STORE", target = "Lnet/minecraft/client/renderer/GameRenderer;reloadShaders(Lnet/minecraft/server/packs/resources/ResourceManager;)V"), index = 3, ordinal = 1)
     public List<Pair<ShaderInstance, Consumer<ShaderInstance>>> modify(List<Pair<ShaderInstance, Consumer<ShaderInstance>>> value, ResourceManager resourceManager) {
         
         try {

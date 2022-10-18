@@ -18,9 +18,6 @@ public class RenderPainting {
     
     public static void renderPainting(EntityRenderer<Painting> renderer, PoseStack poseStack, MultiBufferSource buffers, Painting painting, FunkyFramePaintingVariant variant, TextureAtlasSprite back) {
         
-        if(Minecraft.getInstance().player != null && Minecraft.getInstance().player.isCrouching()) {
-            Minecraft.getInstance().gameRenderer.reloadShaders(Minecraft.getInstance().getResourceManager());
-        }
         PoseStack.Pose pose = poseStack.last();
         Matrix4f matrix = pose.pose();
         Matrix3f normal = pose.normal();
