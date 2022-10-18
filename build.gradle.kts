@@ -57,6 +57,11 @@ tasks.create("postDiscord") {
                     }\"`"
             )
             downloadSources.add(
+                    "<:maven:932165250738970634> `\"com.blamejared.funkyframes:${project(":fabric").base.archivesName.get()}:${
+                        project(":fabric").version
+                    }\"`"
+            )
+            downloadSources.add(
                     "<:maven:932165250738970634> `\"com.blamejared.funkyframes:${project(":forge").base.archivesName.get()}:${
                         project(":forge").version
                     }\"`"
