@@ -29,7 +29,7 @@ void main()
     vec2 st = texCoord0;
     vec4 rawColor = texture(Sampler0, st);
 
-    float noise = map(snoise(vec3(tex_to_quad(st), time)), -1, 1, 0.7, 1);
+    float noise = map(snoise(vec3(quad(st), time)), -1, 1, 0.7, 1);
 
     replace(rawColor, vec4(1, 0, 1, 1), vec4(noise, 0, noise, 1));
 

@@ -29,7 +29,7 @@ void main()
     vec2 st = texCoord0;
 
     vec4 rawColor = texture(Sampler0, st);
-    st = tex_to_quad(st);
+    st = quad(st);
 
     st.y = st.y + 0.01 * sin(time + map(sin(time), -1, 1, 10, 20) * st.x);
     if (inside(st, scale(vec2(5, 5)), scale(vec2(25, 15)))) {

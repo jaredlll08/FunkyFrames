@@ -1,6 +1,7 @@
 #version 150
 
 #define PI 3.14159265359
+#define NUM_OCTAVES 5
 
 // General utility methods, can be imported using:
 // #moj_import <funkyframes:utils.glsl>
@@ -55,7 +56,7 @@ void rotate2dAround(vec2 center, float angle, inout vec2 uv) {
 /**
  * Steps the given uv to be the same size as a texture pixel.
  */
-vec2 tex_to_quad(vec2 uv) {
+vec2 quad(vec2 uv) {
     return uv - vec2(mod(uv.x, 1.0 / TEX_WIDTH), mod(uv.y, 1.0 / TEX_HEIGHT));
 }
 
@@ -155,9 +156,7 @@ float mapSnoise(vec3 v, float min, float max) {
     return map(snoise(v), -1, 1, min, max);
 }
 
-    // Source: https://thebookofshaders.com/13/
-
-    #define NUM_OCTAVES 5
+// Source: https://thebookofshaders.com/13/
 
 float fbm ( in vec2 _st) {
     float v = 0.0;

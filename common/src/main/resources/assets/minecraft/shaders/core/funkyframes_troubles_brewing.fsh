@@ -34,7 +34,7 @@ void main()
     vec4 newColor = vec4(rawColor.rgb, 1);
 
     if (rawColor.a < 1) {
-        vec2 currentQuad = tex_to_quad(st) * 2.;
+        vec2 currentQuad = quad(st) * 2.;
         float noiseMap = mapSnoise(vec3(currentQuad, time), 0, 1);
         rotate2dAround(cauldronCenter*2, time, currentQuad);
 
