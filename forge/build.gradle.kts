@@ -78,7 +78,7 @@ dependencies {
 }
 
 tasks.create<TaskPublishCurseForge>("publishCurseForge") {
-    apiToken = Utils.locateProperty(project, "curseforge_api_token") ?: 0
+    apiToken = Utils.locateProperty(project, "curseforgeApiToken") ?: 0
 
     val mainFile = upload(Properties.CURSE_PROJECT_ID, file("${project.buildDir}/libs/${base.archivesName.get()}-$version.jar"))
     mainFile.changelogType = "markdown"
