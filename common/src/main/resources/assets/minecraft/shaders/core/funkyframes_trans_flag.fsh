@@ -1,7 +1,7 @@
 #version 150
 
-#define TEX_WIDTH 32f
-#define TEX_HEIGHT 32f
+#define TEX_WIDTH 32.0
+#define TEX_HEIGHT 32.0
 
 #moj_import <fog.glsl>
 
