@@ -5,7 +5,7 @@ import net.darkhax.curseforgegradle.TaskPublishCurseForge
 import net.darkhax.curseforgegradle.Constants as CFG_Contants
 
 plugins {
-    id("fabric-loom") version "0.12-SNAPSHOT"
+    id("fabric-loom") version "1.0-SNAPSHOT"
     id("com.blamejared.funkyframes.default")
     id("com.blamejared.funkyframes.loader")
 }
@@ -14,7 +14,6 @@ dependencies {
     minecraft("com.mojang:minecraft:${Versions.MINECRAFT}")
     mappings(loom.layered {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.19.2:2022.08.10@zip")
     })
     modImplementation("net.fabricmc:fabric-loader:${Versions.FABRIC_LOADER}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${Versions.FABRIC}")

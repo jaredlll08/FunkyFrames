@@ -3,6 +3,8 @@ package com.blamejared.funkyframes.platform.registration;
 import com.google.auto.service.AutoService;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 
@@ -40,7 +42,7 @@ public class FabricRegistrationFactory implements RegistrationProvider.Factory {
             
             this.modId = modId;
             
-            final var reg = Registry.REGISTRY.get(key.location());
+            final var reg = BuiltInRegistries.REGISTRY.get(key.location());
             if(reg == null) {
                 throw new RuntimeException("Registry with name " + key.location() + " was not found!");
             }
@@ -83,7 +85,7 @@ public class FabricRegistrationFactory implements RegistrationProvider.Factory {
                 @Override
                 public Holder<I> asHolder() {
                     
-                    return (Holder<I>) registry.getOrCreateHolder((ResourceKey<T>) this.key);
+                    return (Holder<I>) registry.asLookup().getOrThrow((ResourceKey<T>) this.key);
                 }
             };
             entries.add((RegistryObject<T>) ro);

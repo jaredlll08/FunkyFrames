@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.ResourceProvider;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -85,7 +86,7 @@ public class FunkyFramesRenderTypes extends RenderType {
             return builder.apply(textures, this);
         }
         
-        public void register(ResourceManager resourceManager, BiConsumer<ShaderInstance, Consumer<ShaderInstance>> registerFunc) throws IOException {
+        public void register(ResourceProvider resourceManager, BiConsumer<ShaderInstance, Consumer<ShaderInstance>> registerFunc) throws IOException {
             
             registerFunc.accept(new ShaderInstance(resourceManager, formattedName(), format), this::shader);
         }

@@ -17,7 +17,7 @@ public class ClientEventHandler {
         
         try {
             for(FunkyFramesRenderTypes.ShaderRenderType type : FunkyFramesRenderTypes.getRenderTypes().values()) {
-                type.register(event.getResourceManager(), event::registerShader);
+                type.register(event.getResourceProvider(), event::registerShader);
             }
         } catch(IOException e) {
             throw new RuntimeException(e);

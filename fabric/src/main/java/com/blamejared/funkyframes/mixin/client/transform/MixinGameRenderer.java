@@ -5,6 +5,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.ResourceProvider;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -16,12 +17,12 @@ import java.util.function.Consumer;
 @Mixin(GameRenderer.class)
 public class MixinGameRenderer {
     
-    @ModifyVariable(method = "reloadShaders", at = @At(value = "STORE", target = "Lnet/minecraft/client/renderer/GameRenderer;reloadShaders(Lnet/minecraft/server/packs/resources/ResourceManager;)V"), index = 3, ordinal = 1)
-    public List<Pair<ShaderInstance, Consumer<ShaderInstance>>> modify(List<Pair<ShaderInstance, Consumer<ShaderInstance>>> value, ResourceManager resourceManager) {
+    @ModifyVariable(method = "reloadShaders", at = @At(value = "STORE", target = "Lnet/minecraft/client/renderer/GameRenderer;reloadShaders(Lnet/minecraft/server/packs/resources/ResourceManager;)V"), index = 3, ordinal = 1, print = true)
+    public List<Pair<ShaderInstance, Consumer<ShaderInstance>>> modify(List<Pair<ShaderInstance, Consumer<ShaderInstance>>> value, ResourceProvider resourceProvider) {
         
         try {
             for(FunkyFramesRenderTypes.ShaderRenderType type : FunkyFramesRenderTypes.getRenderTypes().values()) {
-                type.register(resourceManager, (shaderInstance, onLoaded) -> value.add(Pair.of(shaderInstance, onLoaded)));
+                type.register(resourceProvider, (shaderInstance, onLoaded) -> value.add(Pair.of(shaderInstance, onLoaded)));
             }
         } catch(IOException e) {
             value.forEach((p_172729_) -> {
